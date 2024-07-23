@@ -49,7 +49,7 @@ function Header() {
       <div className="relative flex flex-grow basis-0 items-center">
         <Link href="/" aria-label="Home page">
           {/* <Logomark className="h-9 w-9 lg:hidden" /> */}
-          <Logo className="hidden h-9 w-auto fill-[#ff7500] lg:block dark:fill-[#ff7500]}" />
+          <p>scikit-ollama</p>
         </Link>
       </div>
       <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
@@ -57,7 +57,7 @@ function Header() {
       </div>
       <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
         <ThemeSelector className="relative z-10" />
-        <Link href="https://github.com/iryna-kondr/scikit-llm" className="group" aria-label="GitHub">
+        <Link href="https://github.com/AndreasKarasenko/scikit-ollama" className="group" aria-label="GitHub">
         {/* COMMENT: GITHUB ICON */}
           <GitHubIcon className="h-6 w-6 fill-zinc-400 group-hover:fill-zinc-500 dark:group-hover:fill-zinc-300" />
         </Link>

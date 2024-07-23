@@ -18,7 +18,7 @@ export function DocsHeader({ title }) {
     <header className="mb-9 space-y-1">
       {section && (
         // COMMENT: MIDDLE SCREEN HEADER (EG INTRODUCTION)
-        <p className="font-display text-sm font-medium text-orange-500">
+        <p className="font-display text-sm font-medium text-teal-800 dark:text-teal-200">
           {section.title}
         </p>
       )}

@@ -23,10 +23,10 @@ const lexend = localFont({
 export const metadata = {
   title: {
     template: '%s - Docs',
-    default: 'Scikit-Learn Meets Large Language Models',
+    default: 'Extending Scikit-LLM With Self-Hosted Models',
   },
   description:
-    'Seamlessly integrate powerful language models into scikit-learn for enhanced NLP tasks.',
+    'Leverage the power of Scikit-LLM and the security of self-hosted LLMs for advanced NLP..',
 }
 
 export default function RootLayout({ children }) {

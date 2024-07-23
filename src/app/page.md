@@ -1,45 +1,31 @@
 ---
 title: Quick start
 ---
+Scikit-Ollama builds on [Scikit-LLM](https://github.com/iryna-kondr/scikit-llm) and allows you to query large language models running through [Ollama](https://github.com/ollama/ollama) for advanced natural language processing.
 
-Scikit-LLM allows you to seamlessly integrate powerful language models into scikit-learn for enhanced text analysis tasks. 
-
-Let's see how it is possible to use Scikit-LLM to perform zero-shot text classification with GPT-4.
+Let's see how to use llama3 for zero-shot text classification.
 
 ---
 
 ## Installation
 
-First of all, it is necessary to install Scikit-LLM. You can do it by running the following command:
+First of all, install scikit-ollama using the following command:
 
 ```bash
-pip install scikit-llm
+pip install scikit-ollama
 ```
 
 ---
 
-## API Key Configuration
-
-For this example, we will use GPT-4, which requires an OpenAI API key. You can get one [here](https://platform.openai.com/api-keys).
-
-Once you have your API key, you can set it as follows:
-
-```python
-from skllm.config import SKLLMConfig
-
-SKLLMConfig.set_openai_key("<YOUR_KEY>")
-SKLLMConfig.set_openai_org("<YOUR_ORGANIZATION_ID>")
-```
-
 {% callout title="Note" %}
-Scikit-LLM supports other language models, including the locally hosted ones. For more information, please refer to the [Backend Families](/docs/introduction-backend-families) section.
+Scikit-Ollama requires setting up Ollama to run on your machine. For more information, please refer to the [Ollama setup](/docs/ollama-setup) section.
 {% /callout %}
 
 ---
 
 ## Zero-Shot Text Classification
 
-Now, we are ready to perform zero-shot text classification with GPT-4. Let's start by loading a sample dataset:
+If you have setup Ollama correctly and loaded a model (e.g. llama3), we are ready to perform zero-shot text classification. We can use scikit-llm's dataset module for showcasing:
 
 ```python
 from skllm.datasets import get_classification_dataset
@@ -49,10 +35,10 @@ from skllm.datasets import get_classification_dataset
 X, y = get_classification_dataset()
 ```
 
-Then, we can create a classifier instance and fit it using conventional scikit-learn syntax:
+Scikit-Ollama uses the same syntax as Scikit-LLM and therefore scikit-learn:
 
 ```python
-from skllm.models.gpt.classification.zero_shot import ZeroShotGPTClassifier
+from skollama.models.gpt.classification.zero_shot import ZeroShotGPTClassifier
 
 clf = ZeroShotGPTClassifier(model="gpt-4-turbo")
 clf.fit(X,y)
