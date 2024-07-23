@@ -1,0 +1,37 @@
+# Contributing
+Welcome to the contributing guide for our project documentation. This document aims to provide all the necessary information for anyone looking to contribute. Whether you're fixing a typo, improving the docs, or adding a new section, your contributions are greatly appreciated.
+
+The documentation uses scikit-llm's [documentation repository](https://github.com/BeastByteAI/skllm-docs) as the baseline. We've made design alterations to ensure our work remains distinct. If you're interested in contributing here, consider also contributing to [scikit-llm](https://github.com/iryna-kondr/scikit-llm).
+
+### Environment Setup
+
+1. **Install NVM for Node.js version management**:
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+   ```
+2. **Install and use the required Node.js version:
+   ```bash
+    nvm install 22 --verbose # get the required node version
+    nvm use 22 # set it as default
+   ```
+3. **Install NPM** (assumes Debian-based Linux):
+   ```bash
+    apt install npm
+   ```
+4. **Install `serve` to serve the static site locally** (assumes Debian-based Linux):
+   ```bash
+    npm install -g serve
+   ```
+4. **Build and serve the static site**:
+   ```bash
+    npm run build # build the static site locally
+    serve -s out # serve the site locally
+   ```
+### How to Contribute
+1. Fork the repository.
+2. Make your changes.
+3. Test locally.
+4. Submit a pull request
+### Additional structure information
+
+Under `src/lib/navigation.js` you can find the navigation section.
