@@ -5,8 +5,9 @@ nextjs:
     title: How to contribute
     description: Learn how to contribute.
 ---
+Hi and thanks for your interest in `scikit-ollama`! There are many ways to contribute, regardless of your background or experience level. The following will guide you through contributing.
 
-Welcome! We appreciate your interest in contributing to `scikit-llm`. Whether you're a developer, designer, writer, or simply passionate about open source, there are several ways you can help improve this project. This document will guide you through the process of contributing to our Python repository.
+If you haven't already please check out [scikit-llm](https://github.com/iryna-kondr/scikit-llm/) which this project is based off! Contributions to their work will likely also find their way here!
 
 ---
 

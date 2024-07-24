@@ -11,21 +11,21 @@ The documentation uses scikit-llm's [documentation repository](https://github.co
    ```
 2. **Install and use the required Node.js version:
    ```bash
-    nvm install 22 --verbose # get the required node version
-    nvm use 22 # set it as default
+   nvm install 22 --verbose # get the required node version
+   nvm use 22 # set it as default
    ```
-3. **Install NPM** (assumes Debian-based Linux):
+3. **Install Next**:
    ```bash
-    apt install npm
+   npm install --save next
    ```
 4. **Install `serve` to serve the static site locally** (assumes Debian-based Linux):
    ```bash
-    npm install -g serve
+   npm install -g serve
    ```
 4. **Build and serve the static site**:
    ```bash
-    npm run build # build the static site locally
-    serve -s out # serve the site locally
+   npm run build # build the static site locally
+   serve -s out # serve the site locally
    ```
 ### How to Contribute
 1. Fork the repository.
@@ -34,4 +34,6 @@ The documentation uses scikit-llm's [documentation repository](https://github.co
 4. Submit a pull request
 ### Additional structure information
 
-Under `src/lib/navigation.js` you can find the navigation section.
+Under `src/app/docs/` you can find the directories for all sub-pages. Each sub-page includes a `page.md` that is later rendered with markdoc. Simply adjust the mardkown file or create a new folder if you have an additional topic to contribute!
+
+Under `src/lib/navigation.js` you can find the navigation section. New documentation should be included in the links.

@@ -40,19 +40,20 @@ Scikit-Ollama uses the same syntax as Scikit-LLM and therefore scikit-learn:
 ```python
 from skollama.models.gpt.classification.zero_shot import ZeroShotGPTClassifier
 
-clf = ZeroShotGPTClassifier(model="gpt-4-turbo")
+clf = ZeroShotGPTClassifier(model="llama3")
 clf.fit(X,y)
 clf.predict(X)
 ```
 
-Scikit-LLM will automatically query the OpenAI API and transform the response into a regular list of labels.
+Scikit-Ollama uses the Client class from the Ollama Python SDK and queries the (by default) local server and return a list of labels.
 
-Additionally, Scikit-LLM will ensure that the obtained response contains a valid label. If this is not the case, a label will be selected randomly (label probabilities are proportional to label occurrences in the "training" set).
+Like Scikit-LLM, Scikit-Ollama ensures that a valid label is returned. If this is not the case, a label will be selected randomly (label probabilities are proportional to label occurrences in the "training" set).
 
+The implemented approaches don't do actual training but rather so-called in-context-learning. Meaning that the additional information in the prompt is meant to guide the classification.
 Furthermore, since the "training" data is not strictly required, it can be fully omitted. The only thing that has to be provided is the list of candidate labels.
 
 ```python
-from skllm.models.gpt.classification.zero_shot import ZeroShotGPTClassifier
+from skollama.models.gpt.classification.zero_shot import ZeroShotGPTClassifier
 
 clf = ZeroShotGPTClassifier(model="gpt-4")
 clf.fit(None, ["positive", "negative", "neutral"])
