@@ -8,16 +8,16 @@ nextjs:
 
 ## Overview
 
-LLMs have proven their proficiency in translation tasks. To leverage this capability, Scikit-LLM provides the Translator module, designed for translating any given text into a specified target language.
+LLMs have proven their proficiency in translation tasks. The actual performance will heavily depend on the efficacy of the chosen model. Nonetheless we implemented the same capabilites as `scikit-llm` and offer a locally running translation interface.
 
 Example:
 
 ```python
-from skllm.models.gpt.text2text.translation import GPTTranslator
+from skollama.models.ollama.text2text.translation import OllamaTranslator
 from skllm.datasets import get_translation_dataset
 
 X = get_translation_dataset()
-t = GPTTranslator(model="gpt-3.5-turbo", output_language="English")
+t = OllamaTranslator(model="llama3", output_language="English")
 translated_text = t.fit_transform(X)
 ```
 
@@ -27,14 +27,12 @@ translated_text = t.fit_transform(X)
 
 The following API reference only lists the parameters needed for the initialization of the estimator. The remaining methods follow the syntax of a scikit-learn transformer.
 
-### GPTTranslator
+### OllamaTranslator
 ```python
-from skllm.models.gpt.text2text.translation import GPTTranslator
+from skollama.models.ollama.text2text.translation import OllamaTranslator
 ```
 
 | **Parameter** | **Type** | **Description**          |
 | ------------- | -------- | ------------------------ |
 | `model`      | `str`  | Model to use, by default "gpt-3.5-turbo". |
-| `key`      | `Optional[str]`  | Estimator-specific API key; if None, retrieved from the global config, by default None. |
-| `org`      | `Optional[str]`  | Estimator-specific ORG key; if None, retrieved from the global config, by default None. |
 | `output_language`      | `str`  | Target language, by default "English". |

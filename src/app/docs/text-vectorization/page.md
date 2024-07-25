@@ -10,12 +10,16 @@ nextjs:
 
 LLMs can be used solely for data preprocessing by embedding a chunk of text of arbitrary length to a fixed-dimensional vector, that can be further used with virtually any model (e.g. classification, regression, clustering, etc.).
 
+With Scikit-Ollama you can choose from a large variety of embedding models. The quality of which you can check on leaderboards such as Huggingface's [MTEB](https://huggingface.co/spaces/mteb/leaderboard). In the following example we will work with the default `nomic-embed-text` embedding model. Simply download it using the usual Ollama CLI command:
+```bash
+ollama pull nomic-embed-text
+```
 Example 1: Embedding the text
 
 ```python
-from skllm.models.gpt.vectorization import GPTVectorizer
+from skollama.models.ollama.vectorization import OllamaVectorizer
 
-vectorizer = GPTVectorizer(batch_size=2)
+vectorizer = OllamaVectorizer(batch_size=2) # batch_size is number of parallel tasks
 X = vectorizer.fit_transform(["This is a text", "This is another text"])
 ```
 
@@ -30,7 +34,7 @@ le = LabelEncoder()
 y_train_encoded = le.fit_transform(y_train)
 y_test_encoded = le.transform(y_test)
 
-steps = [("GPT", GPTVectorizer()), ("Clf", XGBClassifier())]
+steps = [("Ollama", OllamaVectorizer()), ("Clf", XGBClassifier())]
 clf = Pipeline(steps)
 clf.fit(X_train, y_train_encoded)
 yh = clf.predict(X_test)
@@ -42,9 +46,9 @@ yh = clf.predict(X_test)
 
 The following API reference only lists the parameters needed for the initialization of the estimator. The remaining methods follow the syntax of a scikit-learn transformer.
 
-### GPTVectorizer
+### OllamaVectorizer
 ```python
-from skllm.models.gpt.vectorization import GPTVectorizer
+from skllm.models.gpt.vectorization import OllamaVectorizer
 ```
 
 | **Parameter** | **Type** | **Description**          |
