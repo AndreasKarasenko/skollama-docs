@@ -18,7 +18,7 @@ pip install scikit-ollama
 ---
 
 {% callout title="Note" %}
-Scikit-Ollama requires setting up Ollama to run on your machine. For more information, please refer to the [Ollama setup](skollama-docs/docs/ollama-setup) section.
+Scikit-Ollama requires setting up Ollama to run on your machine. For more information, please refer to the [Ollama setup](docs/ollama-setup) section.
 {% /callout %}
 
 ---
