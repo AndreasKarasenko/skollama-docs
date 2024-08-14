@@ -78,13 +78,13 @@ The following API reference only lists the parameters needed for the initializat
 from skllm.models.gpt.classification.zero_shot import ZeroShotGPTClassifier
 ```
 
-| **Parameter** | **Type** | **Description**          |
-| ------------- | -------- | ------------------------ |
-| `model`      | `str`  | Model to use, by default "gpt-3.5-turbo". |
-| `default_label`      | `str`  | Default label for failed prediction; if "Random" -> selects randomly based on class frequencies, by default "Random". |
-| `prompt_template`      | `Optional[str]`  | Custom prompt template to use, by default None. |
-| `key`      | `Optional[str]`  | Estimator-specific API key; if None, retrieved from the global config, by default None. |
-| `org`      | `Optional[str]`  | Estimator-specific ORG key; if None, retrieved from the global config, by default None. |
+| **Parameter**     | **Type**         | **Description**                                                                 |
+| ----------------- | ---------------- | ------------------------------------------------------------------------------- |
+| `model`           | `str`            | Model to use, by default "llama3".                                              |
+| `host`            | `str`            | Ollama host to connect to, by default "http://localhost:11434".                 |
+| `options`         | `dict`           | Additional options to pass to the Ollama API, by default None.                  |
+| `default_label`   | `str`            | Default label for failed prediction; if "Random" -> selects randomly based on class frequencies, by default "Random". |
+| `prompt_template` | `Optional[str]`  | Custom prompt template to use, by default None.                                 |
 
 ### MultiLabelZeroShotGPTClassifier
 
@@ -92,35 +92,11 @@ from skllm.models.gpt.classification.zero_shot import ZeroShotGPTClassifier
 from skllm.models.gpt.classification.zero_shot import MultiLabelZeroShotGPTClassifier
 ```
 
-| **Parameter** | **Type** | **Description**          |
-| ------------- | -------- | ------------------------ |
-| `model`      | `str`  | Model to use, by default "gpt-3.5-turbo". |
-| `default_label`      | `str`  | Default label for failed prediction; if "Random" -> selects randomly based on class frequencies, by default "Random". |
-| `max_labels`      | `Optional[int]`  | Maximum labels per sample, by default 5. |
-| `prompt_template`      | `Optional[str]`  | Custom prompt template to use, by default None. |
-| `key`      | `Optional[str]`  | Estimator-specific API key; if None, retrieved from the global config, by default None. |
-| `org`      | `Optional[str]`  | Estimator-specific ORG key; if None, retrieved from the global config, by default None. |
-
-### ZeroShotVertexClassifier
-
-```python
-from skllm.models.vertex.classification.zero_shot import ZeroShotVertexClassifier
-```
-
-| **Parameter** | **Type** | **Description**          |
-| ------------- | -------- | ------------------------ |
-| `model`      | `str`  | Model to use, by default "text-bison@002". |
-| `default_label`      | `str`  | Default label for failed prediction; if "Random" -> selects randomly based on class frequencies, by default "Random". |
-| `prompt_template`      | `Optional[str]`  | Custom prompt template to use, by default None. |
-
-### MultiLabelZeroShotVertexClassifier
-
-```python
-from skllm.models.vertex.classification.zero_shot import MultiLabelZeroShotVertexClassifier
-```
-| **Parameter** | **Type** | **Description**          |
-| ------------- | -------- | ------------------------ |
-| `model`      | `str`  | Model to use, by default "text-bison@002". |
-| `default_label`      | `str`  | Default label for failed prediction; if "Random" -> selects randomly based on class frequencies, by default "Random". |
-| `max_labels`      | `Optional[int]`  | Maximum labels per sample, by default 5. |
-| `prompt_template`      | `Optional[str]`  | Custom prompt template to use, by default None. |
+| **Parameter**     | **Type**         | **Description**                                                                 |
+| ----------------- | ---------------- | ------------------------------------------------------------------------------- |
+| `model`           | `str`            | Model to use, by default "llama3".                                              |
+| `host`            | `str`            | Ollama host to connect to, by default "http://localhost:11434".                 |
+| `options`         | `dict`           | Additional options to pass to the Ollama API, by default None.                  |
+| `default_label`   | `str`            | Default label for failed prediction; if "Random" -> selects randomly based on class frequencies, by default "Random". |
+| `max_labels`      | `Optional[int]`  | Maximum labels per sample, by default 5.                                        |
+| `prompt_template` | `Optional[str]`  | Custom prompt template to use, by default None.                                 |
