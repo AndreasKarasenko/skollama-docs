@@ -32,7 +32,9 @@ The following API reference only lists the parameters needed for the initializat
 from skollama.models.ollama.text2text.translation import OllamaTranslator
 ```
 
-| **Parameter** | **Type** | **Description**          |
-| ------------- | -------- | ------------------------ |
-| `model`      | `str`  | Model to use, by default "gpt-3.5-turbo". |
-| `output_language`      | `str`  | Target language, by default "English". |
+| **Parameter**      | **Type**        | **Description**                                                                 |
+|--------------------|-----------------|---------------------------------------------------------------------------------|
+| `model`            | `str, optional` | Model to use, by default "gpt-3.5-turbo".                                       |
+| `output_language`  | `str, optional` | Language to translate to, by default "English".                                 |
+| `host`             | `str, optional` | Ollama host to connect to, by default "http://localhost:11434".                 |
+| `options`          | `dict, optional`| Additional options to pass to the Ollama API, by default None.                  |

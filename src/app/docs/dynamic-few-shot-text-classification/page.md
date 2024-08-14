@@ -82,13 +82,14 @@ The following API reference only lists the parameters needed for the initializat
 from skollama.models.ollama.classification.few_shot import DynamicFewShotOllamaClassifier
 ```
 
-| **Parameter** | **Type** | **Description**          |
-| ------------- | -------- | ------------------------ |
-| `model`      | `str`  | Model to use, by default "gpt-3.5-turbo". |
-| `default_label`      | `str`  | Default label for failed prediction; if "Random" -> selects randomly based on class frequencies, by default "Random". |
-| `prompt_template`      | `Optional[str]`  | Custom prompt template to use, by default None. |
-| `key`      | `Optional[str]`  | Estimator-specific API key; if None, retrieved from the global config, by default None. |
-| `n_examples`      | `int`  | Number of closest examples per class to be retrieved, by default 3. |
-| `memory_index`      | `Optional[IndexConstructor]`  | Custom memory index, for details check `skllm.memory` submodule, by default None. |
-| `vectorizer`      | `Optional[BaseVectorizer]`  | Scikit-LLM vectorizer; if None, `GPTVectorizer` is used, by default None. |
-| `metric`  | `Optional[str]` | Metric used for similarity search by the memory_index, by default "euclidean" 
+| **Parameter**      | **Type**                      | **Description**                                                                 |
+|--------------------|-------------------------------|---------------------------------------------------------------------------------|
+| `model`            | `str, optional`               | Model to use, by default "llama3".                                              |
+| `host`             | `str, optional`               | Ollama host to connect to, by default "http://localhost:11434".                 |
+| `options`          | `dict, optional`              | Additional options to pass to the Ollama API, by default None.                  |
+| `default_label`    | `str, optional`               | Default label for failed prediction; if "Random" -> selects randomly based on class frequencies, by default "Random". |
+| `prompt_template`  | `Optional[str], optional`     | Custom prompt template to use, by default None.                                 |
+| `n_examples`       | `int, optional`               | Number of closest examples per class to be retrieved, by default 3.             |
+| `memory_index`     | `Optional[IndexConstructor], optional` | Custom memory index, for details check `skllm.memory` submodule, by default None. |
+| `vectorizer`       | `Optional[BaseVectorizer], optional` | Scikit-LLM vectorizer; if None, `OllamaVectorizer` is used, by default None.    |
+| `metric`           | `Optional[str], optional`     | Metric used for similarity search, by default "euclidean".                      |

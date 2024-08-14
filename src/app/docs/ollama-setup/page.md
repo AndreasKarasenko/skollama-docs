@@ -5,7 +5,6 @@ nextjs:
     title: Ollama setup
     description: Get started Ollama locally.
 ---
-## 
 
 To get started with Ollama, follow the instructions on their [download](https://ollama.com/download) page. Or if you're on Linux:
 

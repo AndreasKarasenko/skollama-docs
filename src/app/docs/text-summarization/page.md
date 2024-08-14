@@ -8,16 +8,16 @@ nextjs:
 
 ## Overview
 
-LLMs excel at performing summarization tasks. Scikit-LLM provides a summarizer that can be used both as stand-alone estimator, or as a preprocessor (in this case we can make an analogy with a dimensionality reduction preprocessor).
+LLMs excel at performing summarization tasks. Scikit-Ollama provides a summarizer that can be used both as stand-alone estimator, or as a preprocessor (in this case we can make an analogy with a dimensionality reduction preprocessor).
 
 Example:
 
 ```python
-from skllm.models.gpt.text2text.summarization import GPTSummarizer
+from skollama.models.ollama.text2text.summarization import OllamaSummarizer
 from skllm.datasets import get_summarization_dataset
 
 X = get_summarization_dataset()
-summarizer = GPTSummarizer(model="gpt-3.5-turbo", max_words=15)
+summarizer = OllamaSummarizer(model="llama3", max_words=15)
 X_summarized = summarizer.fit_transform(X)
 ```
 
@@ -26,7 +26,7 @@ Please be aware that the `max_words` hyperparameter sets a soft limit, which is 
 Additionally, it is possible to generate a summary, emphasizing a specific concept, by providing an optional parameter `focus`:
 
 ```python
-summarizer = GPTSummarizer(model="gpt-3.5-turbo", max_words=15, focus="apples")
+summarizer = OllamaSummarizer(model="llama3", max_words=15, focus="apples")
 ```
 
 ---
@@ -40,10 +40,11 @@ The following API reference only lists the parameters needed for the initializat
 from skllm.models.gpt.text2text.summarization import GPTSummarizer
 ```
 
-| **Parameter** | **Type** | **Description**          |
-| ------------- | -------- | ------------------------ |
-| `model`      | `str`  | Model to use, by default "gpt-3.5-turbo". |
-| `key`      | `Optional[str]`  | Estimator-specific API key; if None, retrieved from the global config, by default None. |
-| `org`      | `Optional[str]`  | Estimator-specific ORG key; if None, retrieved from the global config, by default None. |
-| `max_words`      | `int`  | Soft limit of the summary length, by default 15. |
-| `focus`      | `Optional[str]`  | Concept in the text to focus on, by default None. |
+| **Parameter**   | **Type**            | **Description**                                                                 |
+|-----------------|---------------------|---------------------------------------------------------------------------------|
+| `model`         | `str, optional`     | Model to use, by default "llama3".                                              |
+| `host`          | `str, optional`     | Ollama host to connect to, by default "http://localhost:11434".                 |
+| `options`       | `dict, optional`    | Additional options to pass to the Ollama API, by default None.                  |
+| `default_label` | `str, optional`     | Default label for failed prediction; if "Random" -> selects randomly based on class frequencies, by default "Random". |
+| `max_words`     | `Optional[int], optional` | Maximum number of words to use, by default 15.                                  |
+| `focus`         | `Optional[str]`     | Concept in the text to focus on, by default None.                               |

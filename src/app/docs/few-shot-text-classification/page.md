@@ -50,24 +50,24 @@ The following API reference only lists the parameters needed for the initializat
 from skollama.models.ollama.classification.few_shot import FewShotOllamaClassifier
 ```
 
-| **Parameter** | **Type** | **Description**          |
-| ------------- | -------- | ------------------------ |
-| `model`      | `str`  | Model to use, by default "gpt-3.5-turbo". |
-| `default_label`      | `str`  | Default label for failed prediction; if "Random" -> selects randomly based on class frequencies, by default "Random". |
-| `prompt_template`      | `Optional[str]`  | Custom prompt template to use, by default None. |
-| `key`      | `Optional[str]`  | Estimator-specific API key; if None, retrieved from the global config, by default None. |
-| `org`      | `Optional[str]`  | Estimator-specific ORG key; if None, retrieved from the global config, by default None. |
+| **Parameter**      | **Type**                      | **Description**                                                                 |
+|--------------------|-------------------------------|---------------------------------------------------------------------------------|
+| `model`            | `str, optional`               | Model to use, by default "llama3".                                              |
+| `host`             | `str, optional`               | Ollama host to connect to, by default "http://localhost:11434".                 |
+| `options`          | `dict, optional`              | Additional options to pass to the Ollama API, by default None.                  |
+| `default_label`    | `str, optional`               | Default label for failed prediction; if "Random" -> selects randomly based on class frequencies, by default "Random". |
+| `prompt_template`  | `Optional[str], optional`     | Custom prompt template to use, by default None.                                 |
 
 ### MultiLabelFewShotOllamaClassifier
 ```python
 from skllm.models.gpt.classification.few_shot import MultiLabelFewShotOllamaClassifier
 ```
 
-| **Parameter** | **Type** | **Description**          |
-| ------------- | -------- | ------------------------ |
-| `model`      | `str`  | Model to use, by default "gpt-3.5-turbo". |
-| `default_label`      | `str`  | Default label for failed prediction; if "Random" -> selects randomly based on class frequencies, by default "Random". |
-| `max_labels`      | `Optional[int]`  | Maximum labels per sample, by default 5. |
-| `prompt_template`      | `Optional[str]`  | Custom prompt template to use, by default None. |
-| `key`      | `Optional[str]`  | Estimator-specific API key; if None, retrieved from the global config, by default None. |
-| `org`      | `Optional[str]`  | Estimator-specific ORG key; if None, retrieved from the global config, by default None. |
+| **Parameter**      | **Type**                      | **Description**                                                                 |
+|--------------------|-------------------------------|---------------------------------------------------------------------------------|
+| `model`            | `str, optional`               | Model to use, by default "llama3".                                              |
+| `host`             | `str, optional`               | Ollama host to connect to, by default "http://localhost:11434".                 |
+| `options`          | `dict, optional`              | Additional options to pass to the Ollama API, by default None.                  |
+| `default_label`    | `str, optional`               | Default label for failed prediction; if "Random" -> selects randomly based on class frequencies, by default "Random". |
+| `max_labels`       | `Optional[int], optional`     | Maximum number of labels to predict, by default 5.                              |
+| `prompt_template`  | `Optional[str], optional`     | Custom prompt template to use, by default None.                                 |

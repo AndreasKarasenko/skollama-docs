@@ -4,13 +4,8 @@ export const navigation = [
     links: [
       { title: 'Quick start', href: '/' },
       { title: 'Backend families', href: '/docs/introduction-backend-families' },
+      { title: 'Ollama setup', href: '/docs/ollama-setup'},
     ],
-  },
-  {
-    title: "test",
-    links: [
-      { title: "test", href: "/docs/test"},
-    ]
   },
   {
     title: 'Text classification',
@@ -18,7 +13,7 @@ export const navigation = [
       { title: 'Zero-shot text classification', href: '/docs/zero-shot-text-classification' },
       { title: 'Few-shot text classification', href: '/docs/few-shot-text-classification' },
       { title: 'Dynamic few-shot text classification', href: '/docs/dynamic-few-shot-text-classification' },
-      { title: 'Tunable text classification', href: '/docs/tunable-text-classification' },
+      // { title: 'Tunable text classification', href: '/docs/tunable-text-classification' },
     ],
   },
   {
@@ -26,7 +21,7 @@ export const navigation = [
     links: [
       { title: 'Text summarization', href: '/docs/text-summarization' },
       { title: 'Text translation', href: '/docs/text-translation' },
-      { title: 'Tunable text-to-text', href: '/docs/tunable-text-to-text' },
+      // { title: 'Tunable text-to-text', href: '/docs/tunable-text-to-text' },
     ],
   },
   {
