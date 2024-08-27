@@ -3,7 +3,6 @@ export const navigation = [
     title: 'Introduction',
     links: [
       { title: 'Quick start', href: '/' },
-      { title: 'Backend families', href: '/docs/introduction-backend-families' },
       { title: 'Ollama setup', href: '/docs/ollama-setup'},
     ],
   },

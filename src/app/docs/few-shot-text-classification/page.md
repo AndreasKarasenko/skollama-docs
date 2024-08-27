@@ -34,7 +34,7 @@ labels = clf.predict(X)
 
 # multi-label
 X, y = get_multilabel_classification_dataset()
-clf = MultiLabelFewShotOllamaClassifier(max_labels=2, model="gpt-4")
+clf = MultiLabelFewShotOllamaClassifier(max_labels=2, model="llama3")
 clf.fit(X,y)
 labels = clf.predict(X)
 ```
@@ -60,7 +60,7 @@ from skollama.models.ollama.classification.few_shot import FewShotOllamaClassifi
 
 ### MultiLabelFewShotOllamaClassifier
 ```python
-from skllm.models.gpt.classification.few_shot import MultiLabelFewShotOllamaClassifier
+from skollama.models.ollama.classification.few_shot import MultiLabelFewShotOllamaClassifier
 ```
 
 | **Parameter**      | **Type**                      | **Description**                                                                 |

@@ -38,9 +38,9 @@ X, y = get_classification_dataset()
 Scikit-Ollama uses the same syntax as Scikit-LLM and therefore scikit-learn:
 
 ```python
-from skollama.models.gpt.classification.zero_shot import ZeroShotGPTClassifier
+from skollama.models.ollama.classification.zero_shot import ZeroShotOllamaClassifier
 
-clf = ZeroShotGPTClassifier(model="llama3")
+clf = ZeroShotOllamaClassifier(model="llama3")
 clf.fit(X,y)
 clf.predict(X)
 ```
@@ -53,9 +53,9 @@ The implemented approaches don't do actual training but rather so-called in-cont
 Furthermore, since the "training" data is not strictly required, it can be fully omitted. The only thing that has to be provided is the list of candidate labels.
 
 ```python
-from skollama.models.gpt.classification.zero_shot import ZeroShotGPTClassifier
+from skollama.models.ollama.classification.zero_shot import ZeroShotOllamaClassifier
 
-clf = ZeroShotGPTClassifier(model="gpt-4")
+clf = ZeroShotOllamaClassifier(model="llama3")
 clf.fit(None, ["positive", "negative", "neutral"])
 clf.predict(X)
 ```

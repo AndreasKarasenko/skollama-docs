@@ -10,17 +10,17 @@ nextjs:
 
 One of the powerful features of LLMs is the ability to perform text classification without being re-trained. For that, the only requirement is that the labels must be descriptive.
 
-For example, let's consider a task of classifying a text into one of the following categories: [positive, negative, neutral]. We will use a class `ZeroShotGPTClassifier` and a regular scikit-learn API to perform the classification:
+For example, let's consider a task of classifying a text into one of the following categories: [positive, negative, neutral]. We will use a class `ZeroShotOllamaClassifier` and a regular scikit-learn API to perform the classification:
 
 ```python
-from skllm.models.gpt.classification.zero_shot import ZeroShotGPTClassifier
+from skollama.models.ollama.classification.zero_shot import ZeroShotOllamaClassifier
 from skllm.datasets import get_classification_dataset
 
 # demo sentiment analysis dataset
 # labels: positive, negative, neutral
 X, y = get_classification_dataset()
 
-clf = ZeroShotGPTClassifier(model="gpt-3.5-turbo")
+clf = ZeroShotOllamaClassifier(model="llama3")
 clf.fit(X,y)
 labels = clf.predict(X)
 ```
@@ -28,12 +28,12 @@ labels = clf.predict(X)
 However, in the zero-shot setting, the training data is not required as it is only used for the extraction of the candidate labels. Therefore, it is sufficient to manually provide a list of candidate labels:
 
 ```python
-from skllm.models.gpt.classification.zero_shot import ZeroShotGPTClassifier
+from skollama.models.ollama.classification.zero_shot import ZeroShotOllamaClassifier
 from skllm.datasets import get_classification_dataset
 
 X, _ = get_classification_dataset()
 
-clf = ZeroShotGPTClassifier()
+clf = ZeroShotOllamaClassifier()
 clf.fit(None, ["positive", "negative", "neutral"])
 labels = clf.predict(X)
 ```
@@ -41,7 +41,7 @@ labels = clf.predict(X)
 Additionally, it is possible to perform the classification in a multi-label setting, where multiple labels can be assigned to a single text at a same time:
 
 ```python
-from skllm.models.gpt.classification.zero_shot import MultiLabelZeroShotGPTClassifier
+from skllm.models.ollama.classification.zero_shot import MultiLabelZeroShotOllamaClassifier
 from skllm.datasets import get_multilabel_classification_dataset
 
 X, _ = get_multilabel_classification_dataset()
@@ -57,7 +57,7 @@ candidate_labels = [
     "Return Policy",
     "Product Information",
 ]
-clf = MultiLabelZeroShotGPTClassifier(max_labels=3)
+clf = MultiLabelZeroShotOllamaClassifier(max_labels=3)
 clf.fit(None, [candidate_labels])
 labels = clf.predict(X)
 ```
@@ -72,10 +72,10 @@ Unlike in a typical supervised setting, the performance of a zero-shot classifie
 
 The following API reference only lists the parameters needed for the initialization of the estimator. The remaining methods follow the syntax of a scikit-learn classifier.
 
-### ZeroShotGPTClassifier
+### ZeroShotOllamaClassifier
 
 ```python
-from skllm.models.gpt.classification.zero_shot import ZeroShotGPTClassifier
+from skllm.models.ollama.classification.zero_shot import ZeroShotOllamaClassifier
 ```
 
 | **Parameter**     | **Type**         | **Description**                                                                 |
@@ -86,10 +86,10 @@ from skllm.models.gpt.classification.zero_shot import ZeroShotGPTClassifier
 | `default_label`   | `str`            | Default label for failed prediction; if "Random" -> selects randomly based on class frequencies, by default "Random". |
 | `prompt_template` | `Optional[str]`  | Custom prompt template to use, by default None.                                 |
 
-### MultiLabelZeroShotGPTClassifier
+### MultiLabelZeroShotOllamaClassifier
 
 ```python
-from skllm.models.gpt.classification.zero_shot import MultiLabelZeroShotGPTClassifier
+from skllm.models.ollama.classification.zero_shot import MultiLabelZeroShotOllamaClassifier
 ```
 
 | **Parameter**     | **Type**         | **Description**                                                                 |

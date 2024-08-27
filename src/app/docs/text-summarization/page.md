@@ -35,9 +35,9 @@ summarizer = OllamaSummarizer(model="llama3", max_words=15, focus="apples")
 
 The following API reference only lists the parameters needed for the initialization of the estimator. The remaining methods follow the syntax of a scikit-learn transformer.
 
-### GPTSummarizer
+### OllamaSummarizer
 ```python
-from skllm.models.gpt.text2text.summarization import GPTSummarizer
+from skollama.models.ollama.text2text.summarization import OllamaSummarizer
 ```
 
 | **Parameter**   | **Type**            | **Description**                                                                 |
